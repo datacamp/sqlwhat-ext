@@ -15,7 +15,7 @@ def prepare_state(sol_result, stu_result):
         ast_dispatcher = dispatcher)
 
 
-from sct_syntax import Ex
+from sqlwhat.sct_syntax import Ex
 from sqlwhat_ext import check_result2
 
 def test_check_result2_chain():
