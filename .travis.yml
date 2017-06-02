@@ -1,0 +1,17 @@
+language: python
+python:
+- '3.5'
+install:
+- pip install -r requirements.txt
+- pip install .
+script: py.test tests
+deploy:
+  provider: pypi
+  user: machow
+  password:
+    secure: rln5w0ZBtGmleGD1rqkVnRZoP3dMtmya3Nz8yFFu/zudBzrUPu6dG3CjneVRPiSqh0Y6MqnnHOKMf4F69HG34o2jybhdCVrZfhSLUPcHDobUq9z2WC/dfAx0B0oALDP3qtbs80MeLwvoyC+OkaFESDee7CX/R4nGUdp7CDeoi3faNjzytAT0PprBHrVqxZpUPC7TMBL1wvyAhEcyWM/b8s1WDTHwfIu6KkumcAOqQbNCUsSScOOCuFKN/NtKVFEn+7ZWZ9kk6uaCGw6K+8Po55Zf+W0CZxHBQMvcYfEegMV7HXBr4V+KKnZSedwoeu4PNFmQyV07Ew7VH4VoS2pt88AeQaQv9XGuM+AReq6tIK9OZ341nYhvBaNr3jDteiPM4WRoHlLNqsRP6qLXXWvVbFxcDBUZpbZJSK3Xje+P1LxULz2UaU5XrIKLr/kA2m/WkTgBwDIPexXbHMx18H7fy8V+DrQGFlaKCDTPRm2kn7M5YgeIS+JAxhyTkJg6bRTBkbegmY8UATPD2XKcz/BKwgLQTO9MStf7jOvq5o1YKfaDSEUKwXTgdMk/EW5SGEGjTysDBXlKP6/nf1wiU9dXrBfj7yBHdfyQFkXFsZBEU+vj+HCmGdFkAJ4T8uueqtBmZ9g6F63izbkF/ojPSU84ObI6yeu29BIEIRNsnng8tms=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: datacamp/sqlwhat-ext
+  skip_upload_docs: true
