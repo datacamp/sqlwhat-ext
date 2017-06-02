@@ -1,5 +1,9 @@
 from sqlwhat.Reporter import Reporter
 from sqlwhat.State import State
+from sqlwhat.selectors import Dispatcher
+from sqlwhat.Test import TestFail as TF
+
+import pytest
 
 def prepare_state(sol_result, stu_result):
     dispatcher = Dispatcher.from_dialect('postgresql')
@@ -20,7 +24,7 @@ from sqlwhat_ext import check_result2
 
 def test_check_result2_chain():
     state = prepare_state({'a': [1,2,3]}, {'a': [1,2,3]})
-    Ex(state).test_check_result2()
+    Ex(state) >> check_result2()
 
 def test_check_result2_match_pass():
     state = prepare_state({'a': [1,2,3]}, {'b': [1,2,3]})
@@ -28,4 +32,5 @@ def test_check_result2_match_pass():
 
 def test_check_result2_match_fail():
     state = prepare_state({'a': [1,2,3]}, {'b': [1,2]})
-    check_result2(state, match = 'any')
+    with pytest.raises(TF):
+        check_result2(state, match = 'any')

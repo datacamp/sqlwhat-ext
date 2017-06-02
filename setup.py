@@ -13,8 +13,8 @@ with open('sqlwhat_ext.py', 'rb') as f:
 setup(
 	name = 'sqlwhat-ext',
 	version = version,
-	py_modules= ['sqlwhat_ext'],
-	install_requires = ['sqlwhat'],
+        py_modules= ['sqlwhat_ext'],
+        install_requires = ['sqlwhat>=1.11'],
         description = 'sqlwhat extensions - high level SCTs',
         author = 'Michael Chow',
         author_email = 'michael@datacamp.com',

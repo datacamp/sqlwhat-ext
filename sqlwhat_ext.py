@@ -26,7 +26,7 @@ def check_result2(state, col_names = None, sort = False, match = 'exact'):
 
     # test column names and values
     for k in col_names:
-        test_column_name(child, k)
+        if not match == 'any': test_column_name(child, k)
         test_column(child, k, match = match)
 
     # return state in case another SCT is used after
