@@ -17,10 +17,17 @@
 import os
 import sys
 from unittest import mock
+from functools import wraps
+
+def state_dec(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        return f(*args, **kwargs)
+    return wrapper
  
 MOCK_MODULES = ['sqlwhat.grammar.plsql.ast', 'sqlwhat', 'sqlwhat.sct_syntax']
 for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = mock.Mock()
+    sys.modules[mod_name] = mock.Mock(state_dec = state_dec)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
