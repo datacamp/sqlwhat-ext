@@ -24,6 +24,16 @@ from sqlwhat_ext import check_result2
 Ex() >> check_result2()
 ```
 
+Deploying to PyPI
+----------------------------
+
+Follow these steps
+
+1. Open a PR, merge into master when appropriate.
+2. Once merged, increment `__version__ = 0.0.1` to reflect changes ([see semver for guidance](http://semver.org/)).
+3. Create a github release labeled `vVERSION`. E.g. `v0.0.1`. (see [here](https://help.github.com/articles/creating-releases/)).
+
+
 Running tests
 -------------
 
