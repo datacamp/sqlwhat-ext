@@ -16,8 +16,7 @@ In the course's `requirements.sh`, add
 pip3 install sqlwhat-ext==0.0.1
 ```
 
-To use the extensions in an exercise's SCT, import the function you want into the SCT block of the exercise.
-For example,
+To use the extensions in an exercise's SCT, import the function you want into the SCT block of the exercise:
 
 ```
 from sqlwhat_ext import check_result2
