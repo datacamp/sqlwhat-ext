@@ -2,6 +2,7 @@ sqlwhat-ext
 ===========
 
 [![Build Status](https://travis-ci.org/datacamp/sqlwhat-ext.svg?branch=master)](https://travis-ci.org/datacamp/sqlwhat-ext)
+[![PyPI version](https://badge.fury.io/py/sqlwhat-ext.svg)](https://badge.fury.io/py/sqlwhat-ext)
 
 extensions (high-level SCTs) for sqlwhat.
 
