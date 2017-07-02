@@ -31,3 +31,38 @@ def check_result2(state, col_names = None, sort = False, match = 'exact'):
 
     # return state in case another SCT is used after
     return state
+
+@state_dec
+def check_result_tsql(state, msg="Incorrect result."):
+    """High level function which wraps other SCTs for checking results."""
+
+    stu_res = state.student_result
+    sol_res = state.solution_result
+
+    # empty test
+    test_has_columns(state)
+    # row test
+    test_nrows(state)
+    # column tests
+    child = _sort_columns_indiv(state)
+    for k in sol_res:
+        msg = "Column `{}` in the solution does not have a column with matching values in your results."
+        test_column(child, k, msg, match = 'exact')
+
+    return state
+
+def _sort_columns_indiv(state):
+    tiny_none = _TinyNone()
+    sorted_columns = lambda res: {k: sorted(col, key = lambda el: el or tiny_none) for k, col in res.items()}
+
+    stu_res = sorted_columns(state.student_result)
+    sol_res = sorted_columns(state.solution_result)
+
+    return state.to_child(
+                student_result = stu_res,
+                solution_result = sol_res)
+
+class _TinyNone:
+    def __lt__(self, x): return True
+
+    def __gt__(self, x): return False
