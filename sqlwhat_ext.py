@@ -1,6 +1,7 @@
 __version__ = '0.0.1'
 
 from sqlwhat.sct_syntax import *
+from sqlwhat.checks.check_result import TinyNone
 
 @state_dec
 def check_result2(state, col_names = None, sort = False, match = 'exact'):
@@ -52,7 +53,7 @@ def check_result_tsql(state, msg="Incorrect result."):
     return state
 
 def _sort_columns_indiv(state):
-    tiny_none = _TinyNone()
+    tiny_none = TinyNone()
     sorted_columns = lambda res: {k: sorted(col, key = lambda el: el or tiny_none) for k, col in res.items()}
 
     stu_res = sorted_columns(state.student_result)
@@ -61,8 +62,3 @@ def _sort_columns_indiv(state):
     return state.to_child(
                 student_result = stu_res,
                 solution_result = sol_res)
-
-class _TinyNone:
-    def __lt__(self, x): return True
-
-    def __gt__(self, x): return False
