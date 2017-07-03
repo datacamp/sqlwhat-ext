@@ -26,16 +26,21 @@ def test_check_result_tsql_chain():
     state = prepare_state({'a': [1,2,3]}, {'a': [1,2,3]})
     Ex(state) >> check_result_tsql()
 
-def test_check_result_tsql_match_pass():
-    state = prepare_state({'a': [1,2,3]}, {'a': [1,2,3]})
+@pytest.mark.parametrize('sol_res,stu_res', [        # pass cases where...
+    ( {'a': [1,2,3]}, {'a': [1,2,3]} ),              # identical
+    ( {'a': [1,2,3]}, {'b': [1,2,3]} ),              # diff colnames
+    ( {'a': [1,2,3]}, {'b': [3,2,1]} ),              # diff colnames + reordered
+    ( {'a': [1]}    , {'a': [1], 'b': [2]} )         # extra cols in student result
+    ])
+def test_check_result_tsql_pass(sol_res, stu_res):
+    state = prepare_state(sol_res, stu_res)
     check_result_tsql(state)
 
-def test_check_result_tsql_match_fail1():
-    state = prepare_state({'a': [1,2,3]}, {'b': [1,2,3]})
-    with pytest.raises(TF):
-        check_result_tsql(state)
-
-def test_check_result_tsql_match_fail2():
-    state = prepare_state({'a': [1,2,3]}, {'a': [1,2]})
+@pytest.mark.parametrize('sol_res,stu_res', [        # fail cases where...
+    ( {'a': [1,2,3]}, {'a': [1,2]} ),                # too few rows
+    ( {'a': [1,2,3]}, {'a': [1,2,2]} )               # values mismatch
+    ])
+def test_check_result_tsql_match_fail(sol_res, stu_res):
+    state = prepare_state(sol_res, stu_res)
     with pytest.raises(TF):
         check_result_tsql(state)

@@ -43,5 +43,7 @@ Running tests
 pip install -r requirements.txt
 # may need to uncomment line below
 #pip install -e .
-pytest tests or python -m pytest tests
+pytest tests
+
+# can also do: python -m pytest tests
 ```

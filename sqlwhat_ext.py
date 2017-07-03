@@ -48,7 +48,7 @@ def check_result_tsql(state, msg="Incorrect result."):
     child = _sort_columns_indiv(state)
     for k in sol_res:
         msg = "Column `{}` in the solution does not have a column with matching values in your results."
-        test_column(child, k, msg, match = 'exact')
+        test_column(child, k, msg, match = 'any')
 
     return state
 
