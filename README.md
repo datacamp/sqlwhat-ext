@@ -4,7 +4,7 @@ sqlwhat-ext
 [![Build Status](https://travis-ci.org/datacamp/sqlwhat-ext.svg?branch=master)](https://travis-ci.org/datacamp/sqlwhat-ext)
 [![PyPI version](https://badge.fury.io/py/sqlwhat-ext.svg)](https://badge.fury.io/py/sqlwhat-ext)
 
-Extensions (high-level SCTs) for sqlwhat. 
+Extensions (high-level SCTs) for sqlwhat.
 
 [Documentation here](http://sqlwhat-ext.readthedocs.io/).
 
@@ -43,5 +43,7 @@ Running tests
 pip install -r requirements.txt
 # may need to uncomment line below
 #pip install -e .
-py.test tests
+pytest tests
+
+# can also do: python -m pytest tests
 ```
