@@ -55,19 +55,7 @@ def check_result_tsql(state, msg="Incorrect result."):
 @state_dec
 def pof(state, msg='Your submission is incorrect.'):
     """High level function wrapping other SCTs, giving a pass or fail result."""
-    stu_res = state.student_result
-    sol_res = state.solution_result
-
-    # empty test
-    test_has_columns(state, msg=msg)
-    # row test
-    test_nrows(state, msg=msg)
-    # column tests
-    child = _sort_columns_indiv(state)
-
-    for k in sol_res:
-        test_column(child, k, msg=msg, match = 'any')
-
+    Ex(state).test_correct(check_result_tsql(), fail(msg=msg))
     return state
 
 def _sort_columns_indiv(state):

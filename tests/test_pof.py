@@ -18,11 +18,10 @@ def prepare_state(sol_result, stu_result):
         student_conn = None, solution_conn = None,
         ast_dispatcher = dispatcher)
 
-
 from sqlwhat.sct_syntax import Ex
 from sqlwhat_ext import pof
 
-def test_pof_tsql_chain():
+def test_pof_chain():
     state = prepare_state({'a': [1,2,3]}, {'a': [1,2,3]})
     Ex(state) >> pof()
 
@@ -33,7 +32,7 @@ def test_pof_tsql_chain():
     ( {'a': [1]}    , {'a': [1], 'b': [2]} )         # extra cols in student result
     ])
 
-def test_check_result_tsql_pass(sol_res, stu_res):
+def test_pof_pass(sol_res, stu_res):
     state = prepare_state(sol_res, stu_res)
     pof(state)
 
@@ -42,7 +41,7 @@ def test_check_result_tsql_pass(sol_res, stu_res):
     ( {'a': [1,2,3]}, {'a': [1,2,2]} )               # values mismatch
     ])
 
-def test_check_result_tsql_match_fail(sol_res, stu_res):
+def test_check_pof_match_fail(sol_res, stu_res):
     state = prepare_state(sol_res, stu_res)
     with pytest.raises(TF):
         pof(state)
