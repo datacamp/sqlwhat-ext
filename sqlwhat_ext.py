@@ -52,6 +52,12 @@ def check_result_tsql(state, msg="Incorrect result."):
 
     return state
 
+@state_dec
+def pof(state, msg='Your submission is incorrect.'):
+    """High level function wrapping other SCTs, giving a pass or fail result."""
+    Ex(state).test_correct(check_result_tsql(), fail(msg=msg))
+    return state
+
 def _sort_columns_indiv(state):
     tiny_none = TinyNone()
     sorted_columns = lambda res: {k: sorted(col, key = lambda el: el or tiny_none) for k, col in res.items()}

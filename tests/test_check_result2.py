@@ -13,7 +13,7 @@ def prepare_state(sol_result, stu_result):
         solution_code = "",
         reporter = Reporter(),
         # args below should be ignored
-        pre_exercise_code = "", 
+        pre_exercise_code = "",
         student_result = stu_result, solution_result = sol_result,
         student_conn = None, solution_conn = None,
         ast_dispatcher = dispatcher)
