@@ -15,7 +15,7 @@ In the course's `requirements.sh`, add
 
 ```
 # replace 0.0.1 with the appropriate release version
-pip3 install sqlwhat-ext==0.0.1
+pip3 install --no-deps sqlwhat-ext==0.0.1
 ```
 
 To use the extensions in an exercise's SCT, import the function you want into the SCT block of the exercise:
