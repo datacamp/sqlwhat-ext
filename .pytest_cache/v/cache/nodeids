@@ -1,0 +1,19 @@
+[
+  "tests/test_check_result2.py::test_check_result2_chain",
+  "tests/test_check_result2.py::test_check_result2_match_pass",
+  "tests/test_check_result2.py::test_check_result2_match_fail",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_chain",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_pass[sol_res0-stu_res0]",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_pass[sol_res1-stu_res1]",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_pass[sol_res2-stu_res2]",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_pass[sol_res3-stu_res3]",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_match_fail[sol_res0-stu_res0]",
+  "tests/test_check_result_tsql.py::test_check_result_tsql_match_fail[sol_res1-stu_res1]",
+  "tests/test_pof.py::test_pof_chain",
+  "tests/test_pof.py::test_pof_pass[sol_res0-stu_res0]",
+  "tests/test_pof.py::test_pof_pass[sol_res1-stu_res1]",
+  "tests/test_pof.py::test_pof_pass[sol_res2-stu_res2]",
+  "tests/test_pof.py::test_pof_pass[sol_res3-stu_res3]",
+  "tests/test_pof.py::test_check_pof_match_fail[sol_res0-stu_res0]",
+  "tests/test_pof.py::test_check_pof_match_fail[sol_res1-stu_res1]"
+]

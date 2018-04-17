@@ -1,13 +1,10 @@
-from sqlwhat.Reporter import Reporter
+from protowhat.Reporter import Reporter
+from protowhat.Test import TestFail as TF
 from sqlwhat.State import State
-from sqlwhat.selectors import Dispatcher
-from sqlwhat.Test import TestFail as TF
 
 import pytest
 
 def prepare_state(sol_result, stu_result):
-    dispatcher = Dispatcher.from_dialect('postgresql')
-
     return State(
         student_code = "",
         solution_code = "",
@@ -15,8 +12,7 @@ def prepare_state(sol_result, stu_result):
         # args below should be ignored
         pre_exercise_code = "",
         student_result = stu_result, solution_result = sol_result,
-        student_conn = None, solution_conn = None,
-        ast_dispatcher = dispatcher)
+        student_conn = None, solution_conn = None)
 
 from sqlwhat.sct_syntax import Ex
 from sqlwhat_ext import pof
