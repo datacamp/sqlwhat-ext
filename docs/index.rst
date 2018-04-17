@@ -1,13 +1,12 @@
-.. sqlwhat documentation master file, created by
-   sphinx-quickstart on Thu Feb 23 11:22:59 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+General
+~~~~~~~
 
-sqlwhat
-===================================
+Extensions (high-level SCTs) for `sqlwhat <https://sqlwhat.readthedocs.io>`_.
 
 Api
-----
+~~~
 
 .. automodule:: sqlwhat_ext
     :members:
+
+

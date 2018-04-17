@@ -25,7 +25,7 @@ def state_dec(f):
         return f(*args, **kwargs)
     return wrapper
  
-MOCK_MODULES = ['sqlwhat.grammar.plsql.ast', 'sqlwhat', 'sqlwhat.sct_syntax']
+MOCK_MODULES = ['sqlwhat.grammar.plsql.ast', 'sqlwhat', 'sqlwhat.sct_syntax', 'sqlwhat.checks.check_result']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock(state_dec = state_dec)
 
@@ -109,7 +109,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sqlwhatdoc'
+htmlhelp_basename = 'sqlwhatextdoc'
 
 
 def setup(app):
