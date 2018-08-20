@@ -1,1 +1,8 @@
-pytest
+# pkg deps
+protowhat==1.0.2
+sqlwhat==3.0.0
+
+# test deps
+pytest==3.5.0
+codecov==2.0.15
+pytest-cov==2.5.1

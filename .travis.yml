@@ -1,10 +1,12 @@
 language: python
+
 python:
 - '3.5'
-install:
-- pip install -r requirements.txt
-- pip install .
-script: py.test tests
+
+install: make install
+
+script: make test
+
 deploy:
   provider: pypi
   user: machow

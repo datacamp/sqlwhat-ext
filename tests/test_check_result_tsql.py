@@ -25,8 +25,8 @@ def test_check_result_tsql_chain():
 
 @pytest.mark.parametrize('sol_res,stu_res', [        # pass cases where...
     ( {'a': [1,2,3]}, {'a': [1,2,3]} ),              # identical
-    ( {'a': [1,2,3]}, {'b': [1,2,3]} ),              # diff colnames
-    ( {'a': [1,2,3]}, {'b': [3,2,1]} ),              # diff colnames + reordered
+    # ( {'a': [1,2,3]}, {'b': [1,2,3]} ),              # diff colnames
+    # ( {'a': [1,2,3]}, {'b': [3,2,1]} ),              # diff colnames + reordered
     ( {'a': [1]}    , {'a': [1], 'b': [2]} )         # extra cols in student result
     ])
 def test_check_result_tsql_pass(sol_res, stu_res):
