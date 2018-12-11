@@ -4,6 +4,7 @@ sqlwhat-ext
 [![Build Status](https://travis-ci.org/datacamp/sqlwhat-ext.svg?branch=master)](https://travis-ci.org/datacamp/sqlwhat-ext)
 [![codecov](https://codecov.io/gh/datacamp/sqlwhat-ext/branch/master/graph/badge.svg)](https://codecov.io/gh/datacamp/sqlwhat-ext)
 [![PyPI version](https://badge.fury.io/py/sqlwhat-ext.svg)](https://badge.fury.io/py/sqlwhat-ext)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacamp%2Fsqlwhat-ext.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacamp%2Fsqlwhat-ext?ref=badge_shield)
 
 Extensions (high-level SCTs) for sqlwhat.
 
@@ -48,3 +49,7 @@ pytest tests
 
 # can also do: python -m pytest tests
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdatacamp%2Fsqlwhat-ext.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdatacamp%2Fsqlwhat-ext?ref=badge_large)
