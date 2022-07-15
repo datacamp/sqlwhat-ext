@@ -4,5 +4,5 @@ sqlwhat==3.0.0
 
 # test deps
 pytest==3.5.0
-codecov==2.0.15
+codecov==2.0.16
 pytest-cov==2.5.1
