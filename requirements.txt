@@ -3,6 +3,6 @@ protowhat==1.0.2
 sqlwhat==3.0.0
 
 # test deps
-pytest==3.5.0
+pytest==9.0.3
 codecov==2.0.15
 pytest-cov==2.5.1
